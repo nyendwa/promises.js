@@ -35,9 +35,17 @@ function createPost(post) {
 // createPost({ title: 'Post Three', body: 'This is post three' })
 //     .then(getPosts)
 //     .catch(err=console.log(err));
+
+async function init() {
+    await createPost({ title: 'Post Three', body: 'This is post three' });
+    getPosts();
+}
+init();
+
+
 //Promise All
-const promise1 = Promise.resolve('Hello world');
-const promise2 = new Promise((resolve, reject) =>
-    setTimeout(resolve, 3000, 'Great Job'));
-const promise3 = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json());
-Promise.all([promise1, promise2, promise3]).then(values => console.log(values));
+// const promise1 = Promise.resolve('Hello world');
+// const promise2 = new Promise((resolve, reject) =>
+//     setTimeout(resolve, 3000, 'Great Job'));
+// const promise3 = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json());
+// Promise.all([promise1, promise2, promise3]).then(values => console.log(values));
